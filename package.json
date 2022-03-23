@@ -9,10 +9,16 @@
 	"categories": [
 		"Other"
 	],
+	"main": "./dist/extension.js",
+	"capabilities": {
+		"virtualWorkspaces": true,
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
 	"activationEvents": [
 		"onCommand:recombobulator.base64"
 	],
-	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
