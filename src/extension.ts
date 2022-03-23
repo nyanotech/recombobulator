@@ -35,14 +35,11 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.base64', () => {
 		applyEdit(base64);
-		vscode.window.showInformationMessage('base64-encoded the selection!');
 	}));
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.rot13', () => {
 		applyEdit(rot13);
-		vscode.window.showInformationMessage('rot13\'d the selection!');
 	}));
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.unbase64', () => {
 		applyEdit(unbase64);
-		vscode.window.showInformationMessage('base64-decoded the selection!');
 	}));
 }
