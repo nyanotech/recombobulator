@@ -1,6 +1,6 @@
 # recombobulator
 
-This extension adds various text functions and encodings.
+vscode extension to add various text functions and encodings.
 
 ## Features
 
