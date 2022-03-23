@@ -8,13 +8,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 		if (editor) {
 			const document = editor.document;
-			const selection = editor.selection;
-			const text = document.getText(selection);
-
-			const processed = Buffer.from(text).toString('base64'); // TODO - handle different character encodings
 
 			editor.edit(editBuilder => {
-				editBuilder.replace(selection, processed);
+				editor.selections.forEach(selection => {
+					const text = document.getText(selection);
+					const processed = Buffer.from(text).toString('base64'); // TODO - handle different character encodings
+					editBuilder.replace(selection, processed);
+				});
 			});
 		}
 
