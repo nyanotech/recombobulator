@@ -17,7 +17,8 @@
 		}
 	},
 	"activationEvents": [
-		"onCommand:recombobulator.base64"
+		"onCommand:recombobulator.base64",
+		"onCommand:recombobulator.unbase64"
 	],
 	"contributes": {
 		"commands": [
@@ -25,12 +26,21 @@
 				"command": "recombobulator.base64",
 				"category": "Recombobulator",
 				"title": "base64 encode"
+			},
+			{
+				"command": "recombobulator.unbase64",
+				"category": "Recombobulator",
+				"title": "base64 decode"
 			}
 		],
 		"menus": {
 			"commandPalette": [
 				{
 					"command": "recombobulator.base64",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "recombobulator.unbase64",
 					"when": "editorHasSelection"
 				}
 			]
