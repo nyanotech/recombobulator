@@ -8,6 +8,12 @@ function unbase64(a: string) {
 	return Buffer.from(a, 'base64').toString("utf-8"); // TODO - handle different character encodings
 }
 
+function rot13(a: string) {
+	const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	const rotatedAlphabet = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	return a.replace(/[a-zA-Z]/g, letter => rotatedAlphabet[alphabet.indexOf(letter)]);
+}
+
 function applyEdit(transform: Function) {
 	const editor = vscode.window.activeTextEditor;
 
@@ -30,6 +36,10 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.base64', () => {
 		applyEdit(base64);
 		vscode.window.showInformationMessage('base64-encoded the selection!');
+	}));
+	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.rot13', () => {
+		applyEdit(rot13);
+		vscode.window.showInformationMessage('rot13\'d the selection!');
 	}));
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.unbase64', () => {
 		applyEdit(unbase64);

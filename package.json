@@ -18,6 +18,7 @@
 	},
 	"activationEvents": [
 		"onCommand:recombobulator.base64",
+		"onCommand:recombobulator.rot13",
 		"onCommand:recombobulator.unbase64"
 	],
 	"contributes": {
@@ -26,6 +27,11 @@
 				"command": "recombobulator.base64",
 				"category": "Recombobulator",
 				"title": "base64 encode"
+			},
+			{
+				"command": "recombobulator.rot13",
+				"category": "Recombobulator",
+				"title": "rot13"
 			},
 			{
 				"command": "recombobulator.unbase64",
@@ -37,6 +43,10 @@
 			"commandPalette": [
 				{
 					"command": "recombobulator.base64",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "recombobulator.rot13",
 					"when": "editorHasSelection"
 				},
 				{
