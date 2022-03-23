@@ -17,6 +17,7 @@
 		"commands": [
 			{
 				"command": "recombobulator.base64",
+				"category": "Recombobulator",
 				"title": "base64 encode"
 			}
 		]
