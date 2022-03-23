@@ -10,14 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:recombobulator.helloWorld"
+		"onCommand:recombobulator.base64"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "recombobulator.helloWorld",
-				"title": "Hello World"
+				"command": "recombobulator.base64",
+				"title": "base64 encode"
 			}
 		]
 	},
