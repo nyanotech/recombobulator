@@ -20,7 +20,15 @@
 				"category": "Recombobulator",
 				"title": "base64 encode"
 			}
-		]
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "recombobulator.base64",
+					"when": "editorHasSelection"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run package",
