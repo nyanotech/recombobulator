@@ -2,6 +2,7 @@
   "name": "recombobulator",
 	"displayName": "recombobulator",
 	"description": "Misc text utilities",
+	"license": "MIT",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.65.0"
