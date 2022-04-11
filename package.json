@@ -4,6 +4,10 @@
 	"description": "Misc text utilities",
 	"license": "MIT",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nyanotech/recombobulator.git"
+	},
 	"engines": {
 		"vscode": "^1.65.0"
 	},
