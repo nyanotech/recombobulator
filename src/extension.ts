@@ -1,4 +1,9 @@
+import * as crypto from "crypto";
 import * as vscode from 'vscode';
+
+function generateUUID(a: string) {
+	return crypto.randomUUID();
+}
 
 function base64(a: string) {
 	return Buffer.from(a).toString('base64'); // TODO - handle different character encodings
@@ -33,6 +38,9 @@ function applyEdit(transform: Function) {
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Recombobulator is activated!');
 
+	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.generate-uuid', () => {
+		applyEdit(generateUUID);
+	}));
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.base64', () => {
 		applyEdit(base64);
 	}));
