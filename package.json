@@ -48,20 +48,16 @@
 		"menus": {
 			"commandPalette": [
 				{
-					"command": "recombobulator.generate-uuid",
-					"when": "editorFocus"
+					"command": "recombobulator.generate-uuid"
 				},
 				{
-					"command": "recombobulator.base64",
-					"when": "editorHasSelection"
+					"command": "recombobulator.base64"
 				},
 				{
-					"command": "recombobulator.unbase64",
-					"when": "editorHasSelection"
+					"command": "recombobulator.unbase64"
 				},
 				{
-					"command": "recombobulator.rot13",
-					"when": "editorHasSelection"
+					"command": "recombobulator.rot13"
 				}
 			]
 		}
