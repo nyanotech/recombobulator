@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install
-      - uses: nyanotech/vsce-action@3.0.0
+      - uses: nyanotech/vsce-action@53b5728fac290f6e1e722f0e5452f5d768a5c8fb
         with:
           args: "publish -p $VSCE_TOKEN"
         env:
