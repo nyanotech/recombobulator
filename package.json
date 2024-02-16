@@ -4,7 +4,7 @@
 	"displayName": "recombobulator",
 	"description": "Misc text utilities",
 	"license": "BSD-3-Clause",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/nyanotech/recombobulator.git"

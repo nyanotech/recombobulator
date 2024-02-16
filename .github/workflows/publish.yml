@@ -5,13 +5,12 @@ on:
 
 name: Publish Extension
 jobs:
-  publish:
+  Publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm install
-      - uses: nyanotech/vsce-action@53b5728fac290f6e1e722f0e5452f5d768a5c8fb
-        with:
-          args: "publish -p $VSCE_TOKEN"
+      - run: npm i -g @vscode/vsce
+      - run: "vsce publish -p $VSCE_TOKEN"
         env:
           VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
