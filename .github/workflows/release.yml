@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - main
+
+name: Update release branch if version incremented
+jobs:
+  check-version:
+    name: "Check version"
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.bumped.outputs.test }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check if version bumped in package.json
+        id: bumped
+        run: 'if [ $(git blame -l package.json | grep "\"version\":" | cut -d " " -f 1) = $(git rev-parse HEAD) ]; then echo true > $GITHUB_OUTPUT; fi'
+  push-branch:
+    name: "Push branch"
+    needs: check-version
+    if: ${{ needs.bumped.outputs.output1 == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Push release branch
+        env:
+          OUTPUT: ${{ needs.bumped.outputs.output1 }}
+        run: '
+          git branch -f release &&
+          git push -f origin release
+        '
