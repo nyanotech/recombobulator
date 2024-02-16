@@ -1,23 +1,4 @@
-import * as crypto from "crypto";
 import * as vscode from 'vscode';
-
-function generateUUID(a: string) {
-	return crypto.randomUUID();
-}
-
-function base64(a: string) {
-	return Buffer.from(a).toString('base64'); // TODO - handle different character encodings
-}
-
-function unbase64(a: string) {
-	return Buffer.from(a, 'base64').toString("utf-8"); // TODO - handle different character encodings
-}
-
-function rot13(a: string) {
-	const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	const rotatedAlphabet = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	return a.replace(/[a-zA-Z]/g, letter => rotatedAlphabet[alphabet.indexOf(letter)]);
-}
 
 function applyEdit(transform: Function) {
 	const editor = vscode.window.activeTextEditor;
@@ -35,9 +16,25 @@ function applyEdit(transform: Function) {
 	}
 }
 
-export function activate(context: vscode.ExtensionContext) {
-	console.log('Recombobulator is activated!');
+function base64(a: string) {
+	return btoa(a); // TODO - figure out how to handle different character encodings
+}
 
+function unbase64(a: string) {
+	return atob(a); // TODO - figure out how to handle different character encodings
+}
+
+function generateUUID(a: string) {
+	return crypto.randomUUID();
+}
+
+function rot13(a: string) {
+	const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	const rotatedAlphabet = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	return a.replace(/[a-zA-Z]/g, letter => rotatedAlphabet[alphabet.indexOf(letter)]);
+}
+
+export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.base64', () => {
 		applyEdit(base64);
 	}));

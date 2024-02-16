@@ -1,8 +1,8 @@
 # recombobulator
 
-This is a vscode extension in which I add small things that I wish vscode could do.
+Small vscode extension in which I features I end up needing.
 
-Currently, those things are:
+Currently, those are:
 
 * (un)base64
 * generate uuid

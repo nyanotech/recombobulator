@@ -1,7 +1,9 @@
 # Change Log
 
-## [Unreleased]
+## 0.0.2
 
-* Initial release
-* rot13
-* base64 encode/decode
+- Reinitialize project as a web extension
+
+## 0.0.1
+
+- Initial release
