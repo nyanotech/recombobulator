@@ -1,15 +1,9 @@
 # recombobulator
 
-Small vscode extension in which I features I end up needing.
+Small vscode extension in which I put features I end up wanting.
 
 Currently, those are:
 
 * (un)base64
 * generate uuid
 * rot13
-
-## Release Notes
-
-### 0.0.1
-
-* Initial release
