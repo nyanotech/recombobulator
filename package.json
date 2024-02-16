@@ -1,9 +1,10 @@
 {
-  "name": "recombobulator",
+	"name": "recombobulator",
+	"publisher": "nyanotech",
 	"displayName": "recombobulator",
 	"description": "Misc text utilities",
 	"license": "BSD-3-Clause",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/nyanotech/recombobulator.git"
@@ -76,7 +77,7 @@
 		"run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.86.0",
+		"@types/vscode": "^1.75.0",
 		"@types/mocha": "^10.0.6",
 		"@types/assert": "^1.5.10",
 		"eslint": "^8.56.0",
