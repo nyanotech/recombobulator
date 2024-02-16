@@ -9,7 +9,7 @@
 		"url": "https://github.com/nyanotech/recombobulator.git"
 	},
 	"engines": {
-		"vscode": "^1.65.0"
+		"vscode": "^1.75.0"
 	},
 	"categories": [
 		"Other"
@@ -21,12 +21,6 @@
 			"supported": true
 		}
 	},
-	"activationEvents": [
-		"onCommand:recombobulator.generate-uuid",
-		"onCommand:recombobulator.base64",
-		"onCommand:recombobulator.unbase64",
-		"onCommand:recombobulator.rot13"
-	],
 	"contributes": {
 		"commands": [
 			{

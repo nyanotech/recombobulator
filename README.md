@@ -1,19 +1,12 @@
 # recombobulator
 
-vscode extension to add various text functions and encodings.
+This is a vscode extension in which I add small things that I wish vscode could do.
 
-## Features
-
-Currently available functions:
+Currently, those things are:
 
 * (un)base64
+* generate uuid
 * rot13
-
-This extension should properly support these vscode features:
-
-* virtual workspaces
-* untrusted workspaces
-* multiple selections/cursors
 
 ## Release Notes
 

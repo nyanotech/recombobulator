@@ -38,16 +38,16 @@ function applyEdit(transform: Function) {
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Recombobulator is activated!');
 
-	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.generate-uuid', () => {
-		applyEdit(generateUUID);
-	}));
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.base64', () => {
 		applyEdit(base64);
 	}));
-	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.rot13', () => {
-		applyEdit(rot13);
-	}));
 	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.unbase64', () => {
 		applyEdit(unbase64);
+	}));
+	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.generate-uuid', () => {
+		applyEdit(generateUUID);
+	}));
+	context.subscriptions.push(vscode.commands.registerCommand('recombobulator.rot13', () => {
+		applyEdit(rot13);
 	}));
 }
